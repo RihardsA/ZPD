@@ -23,11 +23,11 @@ colors.forEach(function(v, i, a){
   console.log(v, i);
   colorHTML += '<span style="background-color:' + v + ';"> ' + v + ' </span>';
 });
-hints.innerHTML = 'Tap/click then say a color to change the background color of the app. Try ' + colorHTML + '.';
+hints.innerHTML = 'Saki krāsas nosaukumu lai manītu fona krāsu ' + colorHTML + '.';
 
 document.body.onclick = function() {
   recognition.start();
-  console.log('Ready to receive a color command.');
+  console.log('Gatavs saņemt balss komandu');
 }
 
 recognition.onresult = function(event) {
@@ -40,7 +40,7 @@ recognition.onresult = function(event) {
   // The second [0] returns the SpeechRecognitionAlternative at position 0.
   // We then return the transcript property of the SpeechRecognitionAlternative object
   var color = event.results[0][0].transcript;
-  diagnostic.textContent = 'Result received: ' + color + '.';
+  diagnostic.textContent = 'Balss saņemta: ' + color + '.';
   bg.style.backgroundColor = color;
   console.log('Confidence: ' + event.results[0][0].confidence);
 }
@@ -50,9 +50,9 @@ recognition.onspeechend = function() {
 }
 
 recognition.onnomatch = function(event) {
-  diagnostic.textContent = "I didn't recognise that color.";
+  diagnostic.textContent = "Neatpazinu krāsu.";
 }
 
 recognition.onerror = function(event) {
-  diagnostic.textContent = 'Error occurred in recognition: ' + event.error;
+  diagnostic.textContent = 'Radās kļūda ' + event.error;
 }
