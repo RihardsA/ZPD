@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>VIDEO</title>
+        <style>
+            h1 {
+                color: rgb(255, 255, 255);
+                text-align: center;
+            }
+            .container { position:relative; }
+                .container video {
+                    position:relative;
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: flex;
+                    margin-top: 5%;
+            }
+            .h265{
+                position:absolute;
+                top: -50px;
+                left: 930px;
+                z-index:1;
+                color: rgb(255, 255, 255);
+            }
+
+            .containerTwo { position:relative; }
+                .containerTwo video {
+                    position:relative;
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: flex;
+                    margin-top: 5%;
+            }
+            .h264{
+                position:absolute;
+                top: -50px;
+                left: 930px;
+                z-index:1;
+                color: rgb(255, 255, 255);
+            }
+
+            body { 
+                background-color: rgb(0, 0, 0);
+                font: 22px Arial, sans-serif; 
+            }
+        </style>
+    </head>
+    <body>
+        <h1>H254 un H265 Video atbalsts</h1>
+        <div class="container">
+            <video controls width="400">
+                <source src="h265.mp4" type="video/mp4">
+            </video>
+            <div class="h265"><p>h265</p></div>
+        </div>
+        <div class="containerTwo">
+            <video controls width="400">
+                <source src="h264.mp4" type="video/mp4">
+            </video>
+            <div class="h264"><p>h264</p></div>
+        </div>
+    </body>
+</html>
